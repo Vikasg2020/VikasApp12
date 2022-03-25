@@ -1,0 +1,35 @@
+﻿@model VikasApp12.Models.DataModel
+
+
+@{
+    ViewBag.Title = "AddStud";
+}
+
+<h2>AddStud</h2>
+
+@using (Html.BeginForm("AddStud", "Home", FormMethod.Post))
+{
+
+    @Html.HiddenFor(m=>m.id)
+
+<div class="form-group">
+    <lable>Name</lable>
+    @Html.TextBoxFor(n => n.name, new { @class = "form-control", @placeholder = "Name" })
+
+     @Html.ValidationMessageFor(n=> n.name, " ", new { @class = "text-danger" })
+
+</div>
+
+<div class="form-group">
+    <lable>Email</lable>
+    @Html.TextBoxFor(n => n.email, new { @class = "form-control", @placeholder = "Email" })
+
+</div>
+<div class="form-group">
+    <lable>department</lable>
+    @Html.TextBoxFor(n => n.depart, new { @class = "form-control", @placeholder = "department" })
+
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+}

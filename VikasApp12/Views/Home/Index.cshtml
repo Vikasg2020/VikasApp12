@@ -1,0 +1,31 @@
+﻿@model List<VikasApp12.Models.DataModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<<table class="table table-striped">
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>email</th>
+        <th>Department</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+ <tr>
+     <td>@item.id</td>
+     <td>@item.name</td>
+     <td>@item.email</td>
+     <td>@item.depart</td>
+
+    <!--<td><button type="button" class="btn btn-success">edit</button></td> -->
+     <td><a href="@Url.Action("Edit","Home",new {item.id })" class="btn btn-success">edit</a></td>
+     <td><a href="@Url.Action("Delete","Home",new {item.id})" class="btn btn-primary">delete </a></td>
+
+ </tr>
+    }
+</table>
